@@ -9,7 +9,8 @@ CREATE TABLE public.Users (
     avatar_url TEXT,
     created_at TIMESTAMPTZ DEFAULT NOW(),
     last_login TIMESTAMPTZ DEFAULT NOW(),
- 
+    updated_at TIMESTAMPTZ DEFAULT NOW(),
+
     CONSTRAINT chk_users_id_not_empty CHECK (length(trim(id)) > 0),
     CONSTRAINT chk_users_username_length CHECK (length(trim(username)) >= 2)
 );

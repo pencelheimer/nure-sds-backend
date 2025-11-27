@@ -10,6 +10,7 @@ CREATE TABLE public.Sets (
     set_name VARCHAR(100) NOT NULL,
     is_public BOOLEAN DEFAULT FALSE,
     creation_date TIMESTAMPTZ DEFAULT NOW(),
+    updated_at TIMESTAMPTZ DEFAULT NOW(),
 
     CONSTRAINT fk_set_user FOREIGN KEY (user_id) REFERENCES public.Users (id) ON DELETE CASCADE,
     CONSTRAINT fk_set_folder FOREIGN KEY (folder_id) REFERENCES public.Folders (folder_id) ON DELETE SET NULL,

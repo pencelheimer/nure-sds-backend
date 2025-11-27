@@ -5,9 +5,10 @@ DROP TABLE IF EXISTS public.Folders CASCADE;
 
 CREATE TABLE public.Folders (
     folder_id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    user_id TEXT NOT NULL, 
+    user_id TEXT NOT NULL,
     parent_folder_id INT NULL,
     folder_name VARCHAR(100) NOT NULL,
+    updated_at TIMESTAMPTZ DEFAULT NOW(),
 
     CONSTRAINT fk_folder_user FOREIGN KEY (user_id) REFERENCES public.Users (id) ON DELETE CASCADE,
     CONSTRAINT fk_folder_parent FOREIGN KEY (parent_folder_id) REFERENCES public.Folders (folder_id) ON DELETE CASCADE,

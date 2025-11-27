@@ -8,6 +8,7 @@ CREATE TABLE public.Cards (
     set_id INT NOT NULL,
     front_text TEXT NOT NULL,
     back_text TEXT NOT NULL,
+    updated_at TIMESTAMPTZ DEFAULT NOW(),
 
     CONSTRAINT fk_card_set FOREIGN KEY (set_id) REFERENCES public.Sets (set_id) ON DELETE CASCADE,
 

@@ -9,6 +9,7 @@ CREATE TABLE public.Progress (
     last_correct BOOLEAN DEFAULT NULL,
     total_count INT DEFAULT 0,
     correct_count INT DEFAULT 0,
+    updated_at TIMESTAMPTZ DEFAULT NOW(),
 
     CONSTRAINT pk_progress PRIMARY KEY (user_id, card_id),
     CONSTRAINT fk_progress_user FOREIGN KEY (user_id) REFERENCES public.Users (id) ON DELETE CASCADE,
