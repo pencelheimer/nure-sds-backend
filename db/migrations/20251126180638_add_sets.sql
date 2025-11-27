@@ -1,3 +1,5 @@
+-- vim: set ft=pgsql :
+
 -- migrate:up
 DROP TABLE IF EXISTS public.Sets CASCADE;
 

@@ -1,3 +1,5 @@
+-- vim: set ft=pgsql :
+
 -- migrate:up
 CREATE OR REPLACE FUNCTION public.sync_user(
     p_username text,
@@ -10,7 +12,7 @@ BEGIN
   INSERT INTO public.Users (id, username, avatar_url, last_login)
   VALUES (jwt_sub, p_username, p_avatar_url, now())
   ON CONFLICT (id) DO UPDATE
-  SET 
+  SET
     username = EXCLUDED.username,
     avatar_url = COALESCE(EXCLUDED.avatar_url, public.Users.avatar_url),
     last_login = now();

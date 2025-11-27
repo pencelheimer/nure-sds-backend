@@ -1,3 +1,5 @@
+-- vim: set ft=pgsql :
+
 -- migrate:up
 COMMENT ON SCHEMA public IS $$
 # FlashDeck API 📚

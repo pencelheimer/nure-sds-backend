@@ -1,3 +1,5 @@
+-- vim: set ft=pgsql :
+
 -- migrate:up
 DROP ROLE IF EXISTS api_user;
 DROP ROLE IF EXISTS anon;
